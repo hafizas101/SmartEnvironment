@@ -24,11 +24,11 @@ Communication between the robot and the processing node achieved using ROS. One 
 ~~~
 rosrun smartenv smartenv
 ~~~
-6. Then run the robot node using the command:
+7. Then run the robot node using the command:
 ~~~
 rosrun lego_smart_env lego_node.py
 ~~~
-
+Robot should start moving forward.
 
 ## Experiment Results
 In our experiment, we are able to detect and classify objects by leveraging the services provided by the smart space infrastructure using a low-end mobile robot with no computer vision abilities. As the mobile robot ROS node is initialized, robot starts moving forward as shown in below figure
