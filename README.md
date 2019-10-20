@@ -14,6 +14,18 @@ As shown in the firgure below, the main components of our experimental setup are
 
 Communication between the robot and the processing node achieved using ROS. One great feature of ROS is that nodes (independent components of the robot) can communicate with each other using messages. We leveraged this framework to send messages from the mobile robot to our smart space processing device.
 
+## Installation Instructions
+1. Boot lego mindstorm ev3 robot using micro SD card running ev3 image using the instructions at https://www.ev3dev.org/
+2. Install ROS melodic and create a catkin workspace on ev3 image robot as well as desktop PC using the instructions available on ROS Wiki http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
+3. Place the folder named "lego_smart_env" in the src folder of catkin workspace running on lego robot.
+4. Place the folder named "smartenv" in the src folder of catkin workspace running on desktop PC.
+5. Download wights file from and place in directory /smartenv/scripts/yolo_files/
+5. First run the smart environment node using the command:
+~~~
+rosrun smartenv smartenv
+~~~
+
+
 
 ## Experiment Results
 In our experiment, we are able to detect and classify objects by leveraging the services provided by the smart space infrastructure using a low-end mobile robot with no computer vision abilities. As the mobile robot ROS node is initialized, robot starts moving forward as shown in below figure
