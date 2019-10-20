@@ -1,5 +1,5 @@
 # ROS-based Integration of Smart Space and a Mobile Robot as the Internet of Robotic Things
-This repository holds the code and data about my research paper available on my [ResearchGate profile](https://www.researchgate.net/publication/336402567_ROS-based_Integration_of_Smart_Space_and_a_Mobile_Robot_as_the_Internet_of_Robotic_Things). This paper attempts to propose how a smart space can be implemented to increase the spatial awareness of a robot by providing more data to make better informed decisions. We focus on using the Robot Operating System (ROS) as a framework to integrate Smart Space and a mobile robot to expand the robots sensory information and make collision avoidance decisions.The key contributions of this research paper are as follows:
+This repository holds the code and data about my research paper titled "ROS-based Integration of Smart Space and a Mobile Robot as the Internet of Robotic Things" available on [ResearchGate profile](https://www.researchgate.net/publication/336402567_ROS-based_Integration_of_Smart_Space_and_a_Mobile_Robot_as_the_Internet_of_Robotic_Things). This paper attempts to propose how a smart space can be implemented to increase the spatial awareness of a robot by providing more data to make better informed decisions. We focus on using the Robot Operating System (ROS) as a framework to integrate Smart Space and a mobile robot to expand the robots sensory information and make collision avoidance decisions.The key contributions of this research paper are as follows:
 - The demonstration of how Smart Space with robust offboard hardware can assist simple robots with no computer vision and image processing capabilities to take complex and computationally expensive decisions.
 - The development of the method to replace large number of on-board noisy robot sensors with fewer external sensors.
 - The implementation of the ground framework for the field of Internet of Robotic Things (IoRT). 
@@ -15,13 +15,14 @@ As shown in the firgure below, the main components of our experimental setup are
 Communication between the robot and the processing node achieved using ROS. One great feature of ROS is that nodes (independent components of the robot) can communicate with each other using messages. We leveraged this framework to send messages from the mobile robot to our smart space processing device.
 ## Mobile Robot Node
 <p align="center">
-  <img width="500" height="240" src="https://github.com/hafizas101/smart_environment/blob/master/images/robot_spec.png">
+  <img width="500" height="230" src="https://github.com/hafizas101/smart_environment/blob/master/images/robot_spec.png">
 </p>
 The hardware and software specifications of our mobile robot have been presented in the Table I.The AprilTag is attached on the robot as shown in below figure.
 <p align="center">
   <img width="330" height="300" src="https://github.com/hafizas101/smart_environment/blob/master/images/robot1.jpg">
 </p>
 The robot is also equipped with an ultrasonic sensor for obstacle detection. On detecting an obstacle, the robot stops and publishes a message to outgoing message topic on which the smart space node is already listening. This message contains identification information. The identification information is the aprilTag data (Tag family and tag ID). AprilTags are divided into different families. Any combination of tag type and tag ID is guaranteed to be unique AprilTag image. Once the identification information has been sent to the smart space node, the robot starts listening for messages from the smart space node on the incoming messages topic. The smart space node locates the robot using the provided information. After doing the necessary processing, the smart space sends back data describing the obstacles in the vicinity of the robot. In our case, the smart space node replies with a list of the names of the detected objects. Based on this information, the robot can decide to continue on the predefined path or change its path. The code for the ROS package running on the Lego EV3 robot is available on [Github Repository](https://github.com/hafizas101/legoNode).
+
 ## Smart Space Node
 <p align="center">
   <img width="500" height="240" src="https://github.com/hafizas101/smart_environment/blob/master/images/smart_spec.png">
