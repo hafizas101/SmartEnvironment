@@ -17,14 +17,17 @@ Communication between the robot and the processing node achieved using ROS. One 
 ## Installation Instructions
 1. Boot lego mindstorm ev3 robot using micro SD card running ev3 image using the instructions at https://www.ev3dev.org/
 2. Install ROS melodic and create a catkin workspace on ev3 image robot as well as desktop PC using the instructions available on ROS Wiki http://wiki.ros.org/ROS/Tutorials/InstallingandConfiguringROSEnvironment
-3. Place the folder named "lego_smart_env" in the src folder of catkin workspace running on lego robot.
-4. Place the folder named "smartenv" in the src folder of catkin workspace running on desktop PC.
+3. Place the folder named "lego_smart_env" in the src folder of catkin workspace running on lego robot. Do Catkin_make and source devel.
+4. Place the folder named "smartenv" in the src folder of catkin workspace running on desktop PC. Do Catkin_make and source devel.
 5. Download wights file from and place in directory /smartenv/scripts/yolo_files/
-5. First run the smart environment node using the command:
+5. First run the smart environment node at desktop PC using the command:
 ~~~
 rosrun smartenv smartenv
 ~~~
-
+6. Then run the robot node using the command:
+~~~
+rosrun lego_smart_env lego_node.py
+~~~
 
 
 ## Experiment Results
