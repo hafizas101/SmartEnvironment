@@ -1,0 +1,4 @@
+string tag_format
+int16 tag_id
+---
+string[] objects
